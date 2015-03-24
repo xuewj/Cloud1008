@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">	
+
+<struts>
+    <!-- devMode is helpful when you want some extra logs for debugging -->
+    <constant name="struts.devMode" value="false" />
+    <!-- Global message resource; 
+    	 Otherwise you will have seperate message resource for each Action 
+    -->
+    <!-- <constant name="struts.custom.i18n.resources" value="messages" />  -->
+    <!-- 
+    	This is important if you are planning to have slashes in Action URLs
+    	e.g. In this demo, numberPlate is deleted using URL /delete/10
+    	This this is set to false; then struts will try to find mapping for 
+    	URL "/10" instaed of "/delete/10"
+     -->
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+     
+    <!-- Normal Action mappings are defined here -->
+	<package name="default" namespace="" extends="json-default">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="loginInterceptor"></interceptor>
+			<interceptor-stack name="loginDefaultStack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="loginDefaultStack"></default-interceptor-ref>
+		<global-results>
+			<result name="login" type="redirectAction">
+				 <param name="actionName">nullAction</param>
+			</result>
+		</global-results>		 
+		<action name="login" class="userManagerAction" method="login">
+			<!-- <result type="redirect">${goingToURL}</result>
+			<result name="input">/view/login.jsp</result> -->
+			<result type="json">
+				<param name="enableGZIP">true</param>
+			</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="logout" class="userManagerAction" method="logout">
+			<result type="json">
+				<param name="enableGZIP">true</param>
+			</result>
+		</action>
+		<action name="register" class="userManagerAction" method="register">
+<!-- 			<result type="redirect">/login</result>
+			<result name="input">/view/register.jsp</result> -->
+			<result type="json">
+				<param name="enableGZIP">true</param>
+			</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="checkUsername" class="userManagerAction" method="checkUsername">
+			<result type="json">
+				<param name="enableGZIP">true</param>
+			</result>
+		</action>
+		
+		
+		
+	    <!-- Two things to Notice: 
+	    	 1) class is set to 'editNumberPlateAction' which is bean defined by Spring context
+	    	 2) We have given the method to be called here as well;
+	   	-->
+		<action name="list" class="listAction" method="listNumberPlates">
+			<!-- <result>/view/editNumberPlateList.jsp</result> -->
+			<result type="json">
+				<param name="enableGZIP">true</param>
+			</result>
+		</action>
+		<action name="add" class="addAction" method="addNumberPlate">
+			<result type="json">
+				<param name="enableGZIP">true</param>
+			</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="delete/*" class="deleteAction" method="deleteNumberPlate">
+		    <param name="numberPlate.id">{1}</param>
+			<result type="json">
+				<param name="enableGZIP">true</param>
+			</result>
+		</action>
+		<action name="query/*" class="queryAction" method="queryNumberPlate">
+			<param name="numberPlate.id">{1}</param>
+			<result type="json">
+				<param name="enableGZIP">true</param>
+			</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="details/*" class="queryAction" method="queryNumberPlateDetails">
+			<param name="numberPlate.id">{1}</param>
+			<result type="json">
+				<param name="enableGZIP">true</param>
+			</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="nullAction" class="nullAction" method="nullAction">
+			<result type="json">
+				<param name="enableGZIP">true</param>
+			</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<action name="*" >
+			<result>/index.html</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
+	
+</struts>

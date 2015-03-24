@@ -1,0 +1,21 @@
+        <form id="login-form" action="./login.action" method="post" data-abide>
+          <div class="name-field">
+            <label>Username <small>required</small>
+              <input name="loginName" type="text" required pattern="[a-zA-Z0-9]+">
+            </label>
+            <small class="error">Username is required and must be a string.</small>
+          </div>
+          <div class="name-field">
+            <label>Password <small>required</small>
+              <input name="password" type="password" required pattern="[a-zA-Z0-9]+">
+            </label>
+            <small class="error">Password is required and must be a string.</small>
+          </div>
+          <div class="switch">
+            <input id="rememberMe" name="rememberMe" type="checkbox" value="true">
+            <label for="rememberMe"></label>
+          </div>
+          <div class="rememberme"> Remember Me <small>Login with cookies</small></div><br/>
+          <button id="register" class="buttom tiny success" >Register</button>
+          <button class="buttom tiny" type="submit">Submit</button>
+        </form>

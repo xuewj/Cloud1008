@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+	<meta charset="utf-8">
+	<!-- If you delete this meta tag World War Z will become a reality -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cloud1008</title>
+	<link rel="icon" type="image/svg+xml" href="images/1oo8.svg">
+	
+	<!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/foundation.css">
+	
+	<!-- If you are using the gem version, you need this only -->
+	<!-- <link rel="stylesheet" href="css/app.css">
+	-->
+	<script src="js/vendor/modernizr.js"></script>
+	
+	<!-- form and the dropzone.js styles -->
+	<link rel="stylesheet" type="text/css" href="css/dropzone.css" />
+    <link rel="stylesheet" type="text/css" href="css/uploader.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+</head>
+<body>
+	<div class="sticky">
+	  <!-- body content here -->
+	<nav class="top-bar" data-topbar role="navigation" >
+	  <ul class="title-area">
+	    <li class="name">
+	      <h1><a href="#">Cloud1008</a></h1>
+	    </li>
+	     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+	    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	  </ul>
+	
+	  <section class="top-bar-section">
+	    <!-- Right Nav Section -->
+	    
+	    <ul class="right">
+	      <li class="has-dropdown">
+	        <a href="#">Edit</a>
+	        <ul class="dropdown">
+	          <li><a href="http://www.google.com">Delete all</a></li>
+	        </ul>
+	      </li>
+	      <li class="has-dropdown">
+	        <a href="#" id="account-dropdown">Account</a>
+	        <ul class="dropdown">
+	          <li><a href="#" id="login-dropdown" data-reveal-id="login-modeal">Login in</a></li>
+	          <li><a href="#" id="register-dropdown" data-reveal-id="register-modeal">Register</a></li>
+	          <li><a href="#" id="logout-dropdown" >Login out</a></li>
+	        </ul>
+	      </li>
+	    </ul>
+	
+	    <!-- Left Nav Section -->
+	    <ul class="left">
+	   	<li class="has-form">
+		<div class="row collapse">
+		  <div class="large-8 small-9 columns">
+		      <input type="text" placeholder="Find Stuff">
+		    </div>
+		    <div class="large-4 small-3 columns">
+		      <a href="#" class="alert button expand">Search</a>
+		    </div>
+		  </div>
+		</li>
+		<li class="has-form">
+		  <a href="http://foundation.zurb.com/docs" class="button">Delete</a>
+		</li>
+	    </ul>
+	  </section>
+	</nav>
+	</div>
+	<!-- Here is the dropzone.js form -->
+	<form action="./add" id="uploader" class="dropzone" method="post" enctype="multipart/form-data">
+	<div class="bigplus"></div>
+
+	</form>
+	<div class="footer">
+		<a href="about.html" data-search="">About</a>
+		<a href="blog.html" data-search="">Blog</a>
+		<a href="APP.html" data-search="">APP</a>
+		<a href="developers.html" data-search="">Developers</a>
+		<a href="contact.html" data-search="">Contact</a>
+		<img src="images/1oo8.svg" />
+	</div>
+
+	<ul class="clearing-thumbs" data-clearing="" style="display:none">
+	  <li><a class="th" href="http://foundation.zurb.com/docs/assets/img/examples/comet.jpg"><img data-caption="Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum." ></a></li>
+	  <li><a class="th" href="http://foundation.zurb.com/docs/assets/img/examples/earth.jpg"><img data-caption="Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum." ></a></li>
+	</ul>
+
+	<div id="login-modeal"  class="reveal-modal" data-reveal>
+	  <h2>Login in</h2>
+		<form id="login-form" action="./login.action" method="post" data-abide>
+		  <div class="name-field">
+		    <label>Username <small>required</small>
+		      <input name="loginName" type="text" required pattern="[a-zA-Z0-9]+">
+		    </label>
+		    <small class="error">Username is required and must be a string.</small>
+		  </div>
+		  <div class="name-field">
+		    <label>Password <small>required</small>
+		      <input name="password" type="password" required pattern="[a-zA-Z0-9]+">
+		    </label>
+		    <small class="error">Password is required and must be a string.</small>
+		  </div>
+		  <div class="switch">
+		  	<input id="rememberMe" name="rememberMe" type="checkbox" value="false" >
+		  	<label for="rememberMe"></label>
+		  </div>
+		  <div class="rememberme"> Remember Me</div><br/>
+		</form>
+		<button id="register" class="buttom tiny success" >Register</button>
+		<button id="submit" class="buttom tiny">Submit</button>
+
+		<small id="result" class="error" style="display:none">Time out</small>
+	  	<a class="close-reveal-modal">&#215;</a>
+	</div>
+
+	<div id="register-modeal"  class="reveal-modal" data-reveal>
+	  <h2>Register</h2>
+		<form id="register-form" action="./register.action" method="post" data-abide>
+		  <div class="name-field">
+		    <label>Username <small>required</small>
+		      <input name="loginName" type="text" required pattern="[a-zA-Z0-9]+">
+		    </label>
+		    <small class="error">Username is required and must be a string.</small>
+		  </div>
+		  <div class="name-field">
+		    <label>Password <small>required</small>
+		      <input name="password" type="password" required pattern="[a-zA-Z0-9]+">
+		    </label>
+		    <small class="error">Password is required and must be a string.</small>
+		  </div>
+		  <div class="name-field">
+		    <label>Confirm Password <small>required</small>
+		      <input name="confirmPassword" type="password" required pattern="[a-zA-Z0-9]+">
+		    </label>
+		    <small class="error">Password is required and must be a string.</small>
+		  </div>
+		  
+		</form>
+		<button id="register" class="buttom tiny success" >Login</button>
+		<button id="submit" class="buttom tiny" >Submit</button>
+		<small id="result" class="error" style="display:none">Time out</small>
+	  	<a class="close-reveal-modal">&#215;</a>
+	</div>
+
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/vendor/fastclick.js"></script>
+	<script src="js/foundation.min.js"></script>
+	<script src="script/dropzone.js"></script>
+	<script src="script/uploader.js"></script>
+	<script src="script/usermanager.js"></script>
+	<script>
+		// Initlize foundation components 
+		$(document).foundation();
+	</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.clearing-thumbs, [data-clearing] {
+	display: none;
+}
+.clearing-caption {
+	bottom: initial;
+	top: 0%;
+	float: left;
+}

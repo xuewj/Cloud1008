@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 379" enable-background="new 0 0 300 379" xml:space="preserve">
+<g id="cross">
+	<g>
+		<line fill="none" stroke="#0071BC" stroke-width="12" x1="49" y1="184" x2="249" y2="184"/>
+		<line fill="none" stroke="#0071BC" stroke-width="12" x1="150.5" y1="285" x2="150" y2="95"/>
+	</g>
+</g>
+<g id="border">
+	<g opacity="0.6">
+		<path fill="#FFFFFF" d="M280,345c0,6.6-5.4,12-12,12H32c-6.6,0-12-5.4-12-12V35c0-6.6,5.4-12,12-12h236c6.6,0,12,5.4,12,12V345z"
+			/>
+		<path fill="none" stroke="#0071BC" stroke-width="11" stroke-miterlimit="10" stroke-dasharray="24.3204,12.1602" d="M280.5,344.5
+			c0,6.6-5.4,12-12,12h-236c-6.6,0-12-5.4-12-12v-310c0-6.6,5.4-12,12-12h236c6.6,0,12,5.4,12,12V344.5z"/>
+	</g>
+</g>
+</svg>

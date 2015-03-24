@@ -1,0 +1,45 @@
+@media only screen and (min-width: 40.063em) {
+    .reveal-modal, dialog {
+      width: 80%;
+      max-width: 26.5rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto; } 
+}
+
+@media only screen and (max-width: 40.063em) {
+    .reveal-modal, dialog {
+      width: 100%;
+      max-width: 26.5rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto; } 
+}
+
+.reveal-modal button{
+	width: 49%;
+	margin: 0; 
+	padding-right: 0;
+	padding-left: 0;
+	margin-top: 0.5rem;;
+
+}
+
+.reveal-modal div.switch{
+	margin-bottom: 6px;
+	display: inline;
+}
+
+.reveal-modal div.rememberme{
+	display: inline;
+	width: 62%;
+	height: 2rem;
+	font-size: 0.851rem;
+	position: absolute;
+	padding: 0.5rem;
+}
+
+.reveal-modal .error{
+	margin: 0.2rem 0 0 0;
+	width: 100%;
+}
