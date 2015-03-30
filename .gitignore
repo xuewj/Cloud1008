@@ -38,6 +38,6 @@ local.properties
 # TeXlipse plugin
 .texlipse
 
-.target/
+target/
 
-.c:/
+c:/
